@@ -3,6 +3,8 @@ import './toggler.sass'
 
 const App = {
 	data: () => ({
+		dark: false,
+
 		budgetary: [],
 		top: [],
 		servers: [],
@@ -26,15 +28,15 @@ const App = {
 
 			switch (this.category) {
 				case 'Бюджетные':
-					this.budgetary.push(title.newArticle)
+					this.budgetary.push(newArticle)
 					break;
 
 				case 'Топовые':
-					this.top.push(title.newArticle)
+					this.top.push(newArticle)
 					break;
 
 				case 'Серверы':
-					this.servers.push(title.newArticle)
+					this.servers.push(newArticle)
 					break;
 			}
 		}

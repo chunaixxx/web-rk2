@@ -11,13 +11,17 @@ a
 	background-color: #EAE2B7
 
 .header
-	background-color: #003049
+	background-color: #F77F00
+	color: #222
 	min-height: 80px
 	display: flex
 	justify-content: space-between
 	align-items: center
 	padding: 0 50px
-	color: #EAE2B7
+
+	&.dark
+		background-color: #003049
+		color: #fff
 
 	&__container
 		display: flex
@@ -36,6 +40,13 @@ a
 .main
 	padding: 50px
 
+	&.dark
+		background-color: #001b29
+		color: #fff
+
+		.section__title
+			color: #fff
+
 	&__title
 		text-align: center
 		color: #F77F00
@@ -48,6 +59,10 @@ a
 	background-color: #FCBF49
 	color: #222
 	font-size: 1.2em
+
+	&.dark
+		background-color: #003049
+		color: #fff
 
 .section
 	&__title

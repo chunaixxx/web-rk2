@@ -4,13 +4,13 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>Сборки компьютеров</title>
 	<link rel="stylesheet" href="main.css">
 	<script src="https://unpkg.com/vue@next"></script>
 </head>
 <body class="page">
 	<div id="app">
-		<header class="header">
+		<header class="header" :class="{ dark: dark }">
 			<div class="header__logo">Кириллов</div>
 			<div class="header__container">
 				<nav class="nav">
@@ -19,23 +19,23 @@
 					<a href="#servers" class="nav__item">Серверы</a>
 				</nav>
 				<div class="header__toggler">
-					<input type="checkbox" class="toggle">
+					<input type="checkbox" class="toggle" v-model="dark">
 					<span>Темная тема</span>
 				</div>
 			</div>
 		</header>
 
-		<main class="main">
+		<main class="main" :class="{ dark: dark }">
 			<h1 class="main__title">Подборки сборок железа</h1>
 
 			<section class="budgetary section" id="budgetary">
 				<h1 class="section__title">Бюджетные</h1>
 
 				<div class="section__inner">
-					<article class="article">
-						<img class="article__img" src="https://comptrick.ru/wp-content/uploads/2020/01/byudzhetnaya-sborka-pc-2020.jpg" alt="комп" srcset="">
-						<h3 class="article__title">Aboba</h3>
-						<div class="article__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi adipisci consectetur saepe voluptas. Omnis, ut iste adipisci ducimus, magni atque itaque laboriosam quaerat ipsum fuga laudantium? Modi, facere. Totam, dolores.</div>
+					<article class="article" v-for="item in budgetary">
+						<img class="article__img" :src="item.url" alt="комп">
+						<h3 class="article__title">{{ item.title }}</h3>
+						<div class="article__desc">{{ item.desc }}</div>
 						
 						<ul class="article__list">
 							<li class="article__list-item">Мать</li>
@@ -50,10 +50,10 @@
 				<h1 class="section__title">Топовые</h1>
 
 				<div class="section__inner">
-					<article class="article">
-						<img class="article__img" src="https://comptrick.ru/wp-content/uploads/2020/01/byudzhetnaya-sborka-pc-2020.jpg" alt="комп" srcset="">
-						<h3 class="article__title">Aboba</h3>
-						<div class="article__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi adipisci consectetur saepe voluptas. Omnis, ut iste adipisci ducimus, magni atque itaque laboriosam quaerat ipsum fuga laudantium? Modi, facere. Totam, dolores.</div>
+					<article class="article" v-for="item in top">
+						<img class="article__img" :src="item.url" alt="комп">
+						<h3 class="article__title">{{ item.title }}</h3>
+						<div class="article__desc">{{ item.desc }}</div>
 						
 						<ul class="article__list">
 							<li class="article__list-item">Мать</li>
@@ -68,10 +68,10 @@
 				<h1 class="section__title">Серверы</h1>
 
 				<div class="section__inner">
-					<article class="article">
-						<img class="article__img" src="https://comptrick.ru/wp-content/uploads/2020/01/byudzhetnaya-sborka-pc-2020.jpg" alt="комп" srcset="">
-						<h3 class="article__title">Aboba</h3>
-						<div class="article__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi adipisci consectetur saepe voluptas. Omnis, ut iste adipisci ducimus, magni atque itaque laboriosam quaerat ipsum fuga laudantium? Modi, facere. Totam, dolores.</div>
+					<article class="article" v-for="item in servers">
+						<img class="article__img" :src="item.url" alt="комп">
+						<h3 class="article__title">{{ item.title }}</h3>
+						<div class="article__desc">{{ item.desc }}</div>
 						
 						<ul class="article__list">
 							<li class="article__list-item">Мать</li>
@@ -111,7 +111,7 @@
 			</form>
 		</main>
 
-		<footer class="footer">
+		<footer class="footer" :class="{ dark: dark }">
 			<span>Кириллов Даниил Павлович | 201-322 | 01.06.2021</span>
 		</footer>
 	</div>

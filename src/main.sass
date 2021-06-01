@@ -35,3 +35,96 @@ a
 
 .main
 	padding: 50px
+
+	&__title
+		text-align: center
+		color: #F77F00
+
+.footer
+	min-height: 100px
+	display: flex
+	justify-content: center
+	align-items: center
+	background-color: #FCBF49
+	color: #222
+	font-size: 1.2em
+
+.section
+	&__title
+		font-size: 2em
+		color: #D62828
+		margin-bottom: 20px
+
+	&__inner
+		display: flex
+		flex-wrap: wrap
+
+		& > *
+			width: 50%
+
+
+		& > *:nth-child(3)
+			width: 100%
+
+.article
+	padding: 50px
+
+	&__img
+		width: 100%
+		height: 150px
+		object-fit: cover
+	
+	&__title
+		margin: 10px 0
+		color: #D62828
+		font-size: 1.5em
+
+	&__desc
+		margin-bottom: 10px
+
+	&__list
+		margin-left: 20px
+		font-size: 1.3em
+
+.form
+	max-width: 700px
+	margin: auto
+
+	&__label
+		display: flex
+		flex-direction: column
+		margin-bottom: 15px
+
+	&__input, &__textarea
+		border: none
+		outline: none
+		padding: 5px 20px
+		margin-top: 5px
+		font-size: 1.2em
+		border-bottom: 2px solid transparent
+		transition: border-bottom .2s ease
+
+		&:focus
+			border-bottom: 2px solid #222
+
+	&__select
+		padding: 5px 20px
+		margin-top: 5px
+		outline: none
+		border: none
+
+		border: 2px solid transparent
+		transition: border .2s ease
+
+		&:focus
+			border: 2px solid #222
+
+	&__submit
+		width: 100%
+		padding: 10px 0
+		font-size: 1.2em
+		background-color: #222
+		color: #fff
+		outline: none
+		border: none
+		cursor: pointer

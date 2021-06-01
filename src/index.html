@@ -9,31 +9,111 @@
 	<script src="https://unpkg.com/vue@next"></script>
 </head>
 <body class="page">
-	<header class="header">
-		<div class="header__logo">Кириллов</div>
-		<div class="header__container">
-			<nav class="nav">
-				<a href="#" class="nav__item">Бюджетные</a>
-				<a href="#" class="nav__item">Топовые</a>
-				<a href="#" class="nav__item">Серверы</a>
-			</nav>
-			<div class="header__toggler">
-				<input type="checkbox" class="toggle" checked>
-				<span>Темная тема</span>
-			</div>
-		</div>
-	</header>
-
-	<main class="main">
-
-	</main>
-
-	<footer class="footer">
-		<span>Кириллов Даниил Павлович | 201-322 | 01.06.2021</span>
-	</footer>
-
 	<div id="app">
-		{{ counter }}
+		<header class="header">
+			<div class="header__logo">Кириллов</div>
+			<div class="header__container">
+				<nav class="nav">
+					<a href="#budgetary" class="nav__item">Бюджетные</a>
+					<a href="#top" class="nav__item">Топовые</a>
+					<a href="#servers" class="nav__item">Серверы</a>
+				</nav>
+				<div class="header__toggler">
+					<input type="checkbox" class="toggle">
+					<span>Темная тема</span>
+				</div>
+			</div>
+		</header>
+
+		<main class="main">
+			<h1 class="main__title">Подборки сборок железа</h1>
+
+			<section class="budgetary section" id="budgetary">
+				<h1 class="section__title">Бюджетные</h1>
+
+				<div class="section__inner">
+					<article class="article">
+						<img class="article__img" src="https://comptrick.ru/wp-content/uploads/2020/01/byudzhetnaya-sborka-pc-2020.jpg" alt="комп" srcset="">
+						<h3 class="article__title">Aboba</h3>
+						<div class="article__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi adipisci consectetur saepe voluptas. Omnis, ut iste adipisci ducimus, magni atque itaque laboriosam quaerat ipsum fuga laudantium? Modi, facere. Totam, dolores.</div>
+						
+						<ul class="article__list">
+							<li class="article__list-item">Мать</li>
+							<li class="article__list-item">БП</li>
+							<li class="article__list-item">Корпус</li>
+						</ul>
+					</article>
+				</div>
+			</section>
+
+			<section class="top section" id="top">
+				<h1 class="section__title">Топовые</h1>
+
+				<div class="section__inner">
+					<article class="article">
+						<img class="article__img" src="https://comptrick.ru/wp-content/uploads/2020/01/byudzhetnaya-sborka-pc-2020.jpg" alt="комп" srcset="">
+						<h3 class="article__title">Aboba</h3>
+						<div class="article__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi adipisci consectetur saepe voluptas. Omnis, ut iste adipisci ducimus, magni atque itaque laboriosam quaerat ipsum fuga laudantium? Modi, facere. Totam, dolores.</div>
+						
+						<ul class="article__list">
+							<li class="article__list-item">Мать</li>
+							<li class="article__list-item">БП</li>
+							<li class="article__list-item">Корпус</li>
+						</ul>
+					</article>
+				</div>
+			</section>
+
+			<section class="servers section" id="servers">
+				<h1 class="section__title">Серверы</h1>
+
+				<div class="section__inner">
+					<article class="article">
+						<img class="article__img" src="https://comptrick.ru/wp-content/uploads/2020/01/byudzhetnaya-sborka-pc-2020.jpg" alt="комп" srcset="">
+						<h3 class="article__title">Aboba</h3>
+						<div class="article__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi adipisci consectetur saepe voluptas. Omnis, ut iste adipisci ducimus, magni atque itaque laboriosam quaerat ipsum fuga laudantium? Modi, facere. Totam, dolores.</div>
+						
+						<ul class="article__list">
+							<li class="article__list-item">Мать</li>
+							<li class="article__list-item">БП</li>
+							<li class="article__list-item">Корпус</li>
+						</ul>
+					</article>
+				</div>
+			</section>
+
+			<form action="#" class="form" @submit.prevent="handleForm">
+				<label class="form__label">
+					<span>Название статьи</span> {{ title }}
+					<input type="text" class="form__input" v-model="title">
+				</label>
+
+				<label class="form__label">
+					<span>Описание</span>
+					<textarea name="" id="" cols="30" rows="5" class="form__textarea" v-model="desc"></textarea>
+				</label>
+
+				<label class="form__label">
+					<span>Категория</span>
+					<select class="form__select" v-model="category">
+						<option value="Бюджетные" selected>Бюджетные</option>
+						<option value="Бюджетные">Топовые</option>
+						<option value="Бюджетные">Серверы</option>
+					</select>
+				</label>
+
+				<label class="form__label">
+					<span>URL-адрес до картинки</span>
+					<input type="text" class="form__input" v-model="url">
+				</label>
+
+				<input type="submit" class="form__submit" value="Добавить">
+			</form>
+		</main>
+
+		<footer class="footer">
+			<span>Кириллов Даниил Павлович | 201-322 | 01.06.2021</span>
+		</footer>
 	</div>
 </body>
 </html>
